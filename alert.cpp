@@ -9,16 +9,16 @@ Return a list of unique worker names who received an alert for frequent keycard 
 Notice that "10:00" - "11:00" is considered to be within a one-hour period, while "23:51" - "00:10" is not considered to be within a one-hour period. */
 
 
-bool compareFunc(pair<int,int> p1, pair<int,int> p2) 
+bool compareFunc(pair<int,int> p_1, pair<int,int> p_2) 
 { 
-    if(p1.first<p2.first) {
+    if(p_1.first<p_2.first) {
         return true;
     }
-    else if(p1.first>p2.first) {
+    else if(p_1.first>p_2.first) {
         return false;
     }
     else {
-        if(p1.second<p2.second) {
+        if(p_1.second<p_2.second) {
             return true;
         }
         else {
