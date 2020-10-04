@@ -1,0 +1,27 @@
+/* You are given an array nums of non-negative integers. nums is considered special if there exists a number x such that there are exactly x numbers in nums that are greater than or equal to x.
+
+Notice that x does not have to be an element in nums.
+
+Return x if the array is special, otherwise, return -1. It can be proven that if nums is special, the value for x is unique. */
+
+
+class Solution {
+public:
+    int specialArray(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        int l = nums.size();
+        int no = -1;
+        for(int i=0;i<=l;i++) {
+            int j = 0;
+            while(j<l && i>nums[j])
+                j++;
+            if(j==l)
+                continue;
+            else if(i == l-j) {
+                return i;
+            }
+            
+        }
+        return -1;
+    }
+};
